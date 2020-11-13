@@ -1,0 +1,51 @@
+﻿@model IEnumerable<AnotacoesAPI.Models.Funcionario>
+@{ ViewBag.Title = "Todos os Funcionarios";}
+<h2>@ViewBag.Title</h2>
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        <input type="submit" value="Cadastrar" class="btn btn-default" />
+    </div>
+</div>
+<table class="table">
+
+    <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Estado</th>
+        <th>Departamento</th>
+        <th>Salário</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <a href="Funcionarios/Edit/@item.Id">
+                    @item.Id
+                </a>
+            </td>
+            <td>
+                <a href="Funcionarios/Edit/@item.Id">
+                    @item.Nome
+                </a>
+            </td>
+            <td>
+                <a href="Funcionarios/Edit/@item.Id">
+                    @item.Estado
+                </a>
+            </td>
+            <td>
+                <a href="Funcionarios/Edit/@item.Id">
+                    @item.Departamento
+                </a>
+            </td>
+            <td>
+                
+                    @item.Salario
+                
+            </td>
+            <td>
+                <a href="Funcionarios/Delete/@item.Id">deletar</a>
+            </td>
+        </tr>
+    }
+</table>
